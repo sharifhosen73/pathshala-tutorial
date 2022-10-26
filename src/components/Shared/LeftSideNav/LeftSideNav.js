@@ -3,6 +3,7 @@ import React from "react";
 import { useContext } from "react";
 import { Button } from "react-bootstrap";
 import { AuthContext } from "../../../context/AuthProvider";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const LeftSideNav = () => {
   const { providerLogin, githubLogin } = useContext(AuthContext);
@@ -35,11 +36,11 @@ const LeftSideNav = () => {
   return (
     <div>
       <Button onClick={handleGoogle} className="my-3" variant="info">
-        Sign In With Google
+        <FaGoogle /> Sign In With Google
       </Button>
       <br />
       <Button onClick={handleGithub} variant="info">
-        Sign In WIth Github
+        <FaGithub /> Sign In WIth Github
       </Button>
     </div>
   );
