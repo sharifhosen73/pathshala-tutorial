@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +22,9 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         handleUpdateUserProfile(name, photoURL);
+        navigate("/");
+        form.reset();
+        toast.success("Successfully Registration!");
       })
       .catch((error) => {
         console.error(error);
@@ -44,7 +49,7 @@ const Register = () => {
           <Form.Control
             type="text"
             name="name"
-            placeholder="Enter Your Name"
+            placeholder="Enter Your Full Name"
             required
           />
         </Form.Group>

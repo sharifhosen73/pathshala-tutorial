@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
+import { Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -9,9 +10,12 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider";
 import "./Header.css";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user?.photoURL);
+  const [isDarkMode, setIsDarkMode] = useState(() => false);
 
   const handleLogOut = () => {
     logOut()
@@ -47,10 +51,27 @@ const Header = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
+            <DarkModeToggle
+              onChange={setIsDarkMode}
+              checked={isDarkMode}
+              size={60}
+            />
             <Form className="d-flex me-5">
-              {user.uid ? (
+              {user?.uid || user?.email ? (
                 <>
-                  <Button onClick={handleLogOut} variant="outline-dark">
+                  <Card.Img
+                    variant="top"
+                    className="header-image rounded-circle"
+                    src={user?.photoURL}
+                    alt={user?.displayName}
+                  />
+                  {/* <img src={user?.photoURL} alt={user?.displayName} /> */}
+                  {/* <p className="mx-1">{user?.displayName}</p> */}
+                  <Button
+                    onClick={handleLogOut}
+                    className="mx-4"
+                    variant="outline-dark"
+                  >
                     Log Out
                   </Button>
                 </>
