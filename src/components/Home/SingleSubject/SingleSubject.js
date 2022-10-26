@@ -8,7 +8,7 @@ const SingleSubject = ({ subject }) => {
   const { _id, name, description, img } = subject;
   return (
     <div>
-      <Card className="subject-card">
+      <Card className="subject-card ">
         <Card.Img className="subject-img" variant="top" src={img} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>

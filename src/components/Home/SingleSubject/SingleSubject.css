@@ -2,7 +2,7 @@
     height: 750px;
     border: 1px solid lightcyan;
     padding: 8px;
-    width: 75%;
+    /* width: 75%; */
 }
 .button{
     display: flex;
