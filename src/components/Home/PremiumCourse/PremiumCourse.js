@@ -7,8 +7,8 @@ const PremiumCourse = () => {
   const subject = useLoaderData();
   return (
     <div>
-      <h1 className="mt-5 text-primary  mx-auto">Premium Course</h1>
-      <Card className="subject-card w-75 mx-auto mt-3 mb-5">
+      <h1 className="mt-5 text-primary w-75 mx-auto">Premium Course</h1>
+      <Card className="subject-card  mx-auto mt-3 mb-5">
         <Card.Img className="subject-img" variant="top" src={subject.img} />
         <Card.Body>
           <Card.Title>{subject.name}</Card.Title>
