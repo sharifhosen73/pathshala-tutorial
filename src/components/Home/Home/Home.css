@@ -3,3 +3,7 @@
     grid-template-columns: repeat(2, 1fr) ;
     grid-gap: 20px;
 }
+.heading-button{
+    height: 40px;
+    margin-top: 10px;
+}

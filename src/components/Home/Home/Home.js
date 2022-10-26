@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
 import SingleSubject from "../SingleSubject/SingleSubject";
 import "./Home.css";
@@ -8,7 +9,12 @@ const Home = () => {
   // console.log(subjects);
   return (
     <div>
-      <h1>Running Courses</h1>
+      <div className="d-flex">
+        <h1>Running Courses</h1>
+        <Button className="ms-3 heading-button" variant="outline-dark">
+          Download
+        </Button>
+      </div>
       <div className="subjects">
         {subjects.map((subject) => (
           <SingleSubject key={subjects._id} subject={subject} />
