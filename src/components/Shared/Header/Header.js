@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider";
 import "./Header.css";
 import DarkModeToggle from "react-dark-mode-toggle";
+import image from "../../../images/Pathshsala+Logo+200.png";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -26,6 +27,13 @@ const Header = () => {
     <div>
       <Navbar bg="info" sticky="top" expand="lg">
         <Container fluid>
+          <img
+            style={{ width: "80px", height: "50px" }}
+            className="ms-5"
+            src={image}
+            alt=""
+            srcset=""
+          />
           <Link className="brand-name" to="/">
             Pathshala Tutorial
           </Link>
