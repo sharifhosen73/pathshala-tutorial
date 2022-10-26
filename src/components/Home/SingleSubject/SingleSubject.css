@@ -1,0 +1,13 @@
+.subject-card{
+    height: 750px;
+    border: 1px solid lightcyan;
+    padding: 8px;
+}
+.button{
+    display: flex;
+    justify-content: space-between;
+}
+.subject-card img{
+    height: 300px;
+}
+

@@ -7,6 +7,7 @@ import {
   updateProfile,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -48,6 +49,10 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  const logOut = () => {
+    return signOut(auth);
+  };
+
   const value = {
     user,
     providerLogin,
@@ -55,6 +60,7 @@ const AuthProvider = ({ children }) => {
     createUser,
     updateUserProfile,
     login,
+    logOut,
   };
 
   return (

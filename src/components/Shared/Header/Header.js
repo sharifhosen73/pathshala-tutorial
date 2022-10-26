@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -6,9 +7,18 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../context/AuthProvider";
 import "./Header.css";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div>
       <Navbar bg="info" sticky="top" expand="lg">
@@ -38,13 +48,23 @@ const Header = () => {
               </NavDropdown>
             </Nav>
             <Form className="d-flex me-5">
-              <Button className="me-2" variant="outline-dark">
-                <Link to="/login">Login</Link>
-              </Button>
-              <Button variant="outline-dark">
-                {" "}
-                <Link to="register">Register</Link>{" "}
-              </Button>
+              {user.uid ? (
+                <>
+                  <Button onClick={handleLogOut} variant="outline-dark">
+                    Log Out
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button className="me-2" variant="outline-dark">
+                    <Link to="/login">Login</Link>
+                  </Button>
+                  <Button variant="outline-dark">
+                    {" "}
+                    <Link to="register">Register</Link>{" "}
+                  </Button>
+                </>
+              )}
             </Form>
           </Navbar.Collapse>
         </Container>
