@@ -7,3 +7,10 @@
     height: 40px;
     margin-top: 10px;
 }
+.pdf-text{
+    margin-top: -200px;
+}
+.heading{
+    display: flex;
+    justify-content: space-between;
+}

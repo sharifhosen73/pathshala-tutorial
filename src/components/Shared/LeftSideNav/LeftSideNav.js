@@ -48,9 +48,9 @@ const LeftSideNav = () => {
   return (
     <div>
       <ul>
-        {subjects.map((subject) => (
+        {/* {subjects.map((subject) => (
           <LeftSideLink key={_id} subject={subject} />
-        ))}
+        ))} */}
       </ul>
 
       <Button onClick={handleGoogle} className="my-3" variant="info">
