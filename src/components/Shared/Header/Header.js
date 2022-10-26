@@ -67,6 +67,7 @@ const Header = () => {
                   <Card.Img
                     title={user.displayName}
                     variant="top"
+                    style={{ width: "50px" }}
                     className="header-image rounded-circle"
                     src={user?.photoURL}
                   />

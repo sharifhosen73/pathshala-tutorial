@@ -19,7 +19,8 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/subjects"),
+        loader: () =>
+          fetch("https://pathshala-tutorial-server.vercel.app/subjects"),
       },
       {
         path: "/faq",
@@ -33,7 +34,9 @@ export const routes = createBrowserRouter([
         path: "/subjects/:id",
         element: <SubjectDetails />,
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/subjects/${params.id}`);
+          return fetch(
+            `https://pathshala-tutorial-server.vercel.app/subjects/${params.id}`
+          );
         },
       },
       {
@@ -44,7 +47,9 @@ export const routes = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/subjects/${params.id}`);
+          return fetch(
+            `https://pathshala-tutorial-server.vercel.app/subjects/${params.id}`
+          );
         },
       },
       {

@@ -17,7 +17,7 @@ const LeftSideNav = () => {
   const { _id } = subjects;
 
   useEffect(() => {
-    fetch("http://localhost:5000/subjects")
+    fetch("https://pathshala-tutorial-server.vercel.app/subjects")
       .then((res) => res.json())
       .then((data) => setSubjects(data));
   }, []);
