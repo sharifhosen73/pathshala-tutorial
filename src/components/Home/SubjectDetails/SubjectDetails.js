@@ -9,7 +9,7 @@ const SubjectDetails = () => {
   const { _id } = subject;
   console.log(subject);
   return (
-    <Card className="subject-card w-75 mx-auto my-5">
+    <Card className="subject-card  mx-auto my-5">
       <Card.Img className="subject-img" variant="top" src={subject.img} />
       <Card.Body>
         <Card.Title>{subject.name}</Card.Title>

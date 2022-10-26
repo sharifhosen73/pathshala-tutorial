@@ -11,6 +11,7 @@ import { AuthContext } from "../../../context/AuthProvider";
 import "./Header.css";
 import DarkModeToggle from "react-dark-mode-toggle";
 import image from "../../../images/Pathshsala+Logo+200.png";
+import LeftSideNav from "../LeftSideNav/LeftSideNav";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -89,6 +90,9 @@ const Header = () => {
                 </>
               )}
             </Form>
+            <div className="d-lg-none">
+              <LeftSideNav />
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>

@@ -2,11 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import Blog from "../../Home/Blog/Blog";
 import Home from "../../Home/Home/Home";
 import LogIn from "../../Home/LogIn/LogIn";
+import NotFound from "../../Home/NotFound/NotFound";
 import PremiumCourse from "../../Home/PremiumCourse/PremiumCourse";
 import Register from "../../Home/Register/Register";
 import SubjectDetails from "../../Home/SubjectDetails/SubjectDetails";
 import Main from "../../Layout/Main";
-import LeftSideNav from "../../Shared/LeftSideNav/LeftSideNav";
 
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 
@@ -20,11 +20,7 @@ export const routes = createBrowserRouter([
         element: <Home />,
         loader: () => fetch("http://localhost:5000/subjects"),
       },
-      {
-        path: "/",
-        element: <LeftSideNav />,
-        loader: () => fetch("http://localhost:5000/subjects"),
-      },
+
       {
         path: "/blog",
         element: <Blog />,
@@ -56,5 +52,9 @@ export const routes = createBrowserRouter([
         element: <Register />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
