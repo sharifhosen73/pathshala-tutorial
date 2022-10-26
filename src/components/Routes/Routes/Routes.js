@@ -6,6 +6,7 @@ import PremiumCourse from "../../Home/PremiumCourse/PremiumCourse";
 import Register from "../../Home/Register/Register";
 import SubjectDetails from "../../Home/SubjectDetails/SubjectDetails";
 import Main from "../../Layout/Main";
+import LeftSideNav from "../../Shared/LeftSideNav/LeftSideNav";
 
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 
@@ -17,6 +18,11 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("http://localhost:5000/subjects"),
+      },
+      {
+        path: "/",
+        element: <LeftSideNav />,
         loader: () => fetch("http://localhost:5000/subjects"),
       },
       {
