@@ -64,13 +64,11 @@ const Header = () => {
               {user?.uid || user?.email ? (
                 <>
                   <Card.Img
+                    title={user.displayName}
                     variant="top"
                     className="header-image rounded-circle"
                     src={user?.photoURL}
-                    alt={user?.displayName}
                   />
-                  {/* <img src={user?.photoURL} alt={user?.displayName} /> */}
-                  {/* <p className="mx-1">{user?.displayName}</p> */}
                   <Button
                     onClick={handleLogOut}
                     className="mx-4"

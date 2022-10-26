@@ -6,6 +6,7 @@ import { useLoaderData } from "react-router-dom";
 
 const SubjectDetails = () => {
   const subject = useLoaderData();
+  const { _id } = subject;
   console.log(subject);
   return (
     <Card className="subject-card w-75 mx-auto my-5">
@@ -18,7 +19,7 @@ const SubjectDetails = () => {
         <Link className="ms-3" to="/">
           Go To Home Page
         </Link>
-        <Link to="">
+        <Link to={`/premium-subject/${_id}`}>
           <Button className="subject-button" variant="primary">
             Premium
           </Button>

@@ -6,6 +6,7 @@ import PremiumCourse from "../../Home/PremiumCourse/PremiumCourse";
 import Register from "../../Home/Register/Register";
 import SubjectDetails from "../../Home/SubjectDetails/SubjectDetails";
 import Main from "../../Layout/Main";
+
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 
 export const routes = createBrowserRouter([
